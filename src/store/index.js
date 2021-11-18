@@ -3,6 +3,8 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const initialCounterState = { counter: 0, showCounter: true };
+const initialAuthState = { isAuthenticated: false };
+
 
 const counterSlice = createSlice({
   name: "counter",
@@ -23,14 +25,10 @@ const counterSlice = createSlice({
   },
 });
 
-const initialAuthState = {
-  isAuthenticated: false,
-};
-
 const authSlice = createSlice({
-  name: "authentication",
+  name: "auth",
   initialState: initialAuthState,
-  reducer: {
+  reducers: {
     login(state) {
       state.isAuthenticated = true;
     },
